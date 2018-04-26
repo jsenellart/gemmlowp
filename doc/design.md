@@ -61,7 +61,7 @@ low-precision-computation paradigm and how it's implemented in gemmlowp.
 
 Inputs and outputs are matrices of uint8 values, but internally we are
 accumulating int32 values, only converting them back to uint8 at the end. This
-means that we need so store a block of int32 accumulators at a time. We compute
+means that we need to store a block of int32 accumulators at a time. We compute
 a block of the result in int32 accumulators and then we "unpack" it into the
 destination matrix at once. In this way, we minimize the amount of memory used
 to store int32 values at a given time.
